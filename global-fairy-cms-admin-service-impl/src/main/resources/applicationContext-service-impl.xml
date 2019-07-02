@@ -36,9 +36,9 @@
 
 	<aop:config>
 		<!--配置事务切点 -->
-		<aop:pointcut id="cms_services"
+		<aop:pointcut id="services"
 			expression="execution(* org.global.fairy.cms.admin.service.*.*(..))" />
-		<aop:advisor pointcut-ref="cms_services" advice-ref="cmsTransactionAdvice" />
+		<aop:advisor pointcut-ref="services" advice-ref="cmsTransactionAdvice" />
 	</aop:config>
 
 </beans>

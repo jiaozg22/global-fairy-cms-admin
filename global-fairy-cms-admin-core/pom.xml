@@ -4,13 +4,12 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.global.fairy.cms.admin</groupId>
+		<groupId>org.global.fairy.cms</groupId>
 		<artifactId>global-fairy-cms-admin</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>org.global.fairy.cms.admin</groupId>
 	<artifactId>global-fairy-cms-admin-core</artifactId>
-
 	<name>global-fairy-cms-admin-core</name>
 	<url>http://maven.apache.org</url>
 	<properties>
@@ -26,7 +25,7 @@
 
 		<dependency>
 			<groupId>org.global.fairy</groupId>
-			<artifactId>global-fairy-dao</artifactId>
+			<artifactId>global-fairy-core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

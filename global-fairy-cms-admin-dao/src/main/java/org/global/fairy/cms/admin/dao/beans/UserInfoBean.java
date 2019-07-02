@@ -3,8 +3,6 @@ package org.global.fairy.cms.admin.dao.beans;
 import java.io.Serializable;
 
 
-//@Entity
-//@Table(name = "user_info")
 public class UserInfoBean implements Serializable{
 	
 	

@@ -8,9 +8,8 @@ import org.global.fairy.cms.admin.api.UserApi;
 import org.global.fairy.cms.admin.api.params.RegistorApiParams;
 import org.global.fairy.cms.admin.forms.RegistorForm;
 import org.global.fairy.cms.admin.forms.converters.RegistorForm2RegistorApiParams;
+import org.global.fairy.cms.admin.modules.MenuBean;
 import org.global.fairy.core.PageParams;
-import org.global.fairy.core.Pager;
-import org.global.fairy.core.utils.ResultJsonUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,13 +18,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
 
+
+
+
 @Controller
 @RequestMapping(value = "/crm")
 public class UserController {
 	private static final Logger logger = LogManager.getLogger();
 
 	@Resource
-	private UserApi userApi;
+	public UserApi userApi;
 
 	/**
 	 * 注册接口
@@ -39,7 +41,9 @@ public class UserController {
 		logger.debug("注册...");
 		RegistorApiParams registorApiParams = RegistorForm2RegistorApiParams
 				.getInstance().convert(registorForm);
-		userApi.register(registorApiParams);
+		//userApi.register(registorApiParams);
+		MenuBean menuBean = new MenuBean();
+		userApi.addMenu();
 		logger.debug("注册成功!");
 		RegistorApiParams registorApiResult = new RegistorApiParams();
 		registorApiResult.setUsername(registorApiParams.getUsername());
@@ -59,8 +63,9 @@ public class UserController {
 		logger.info("新增用户...");
 		RegistorApiParams registorApiParams = RegistorForm2RegistorApiParams
 				.getInstance().convert(registorForm);
-		String result = ResultJsonUtil.toJson(userApi
-				.addUser(registorApiParams));
+		String result = null;
+//		String result = ResultJsonUtil.toJson(userApi
+//				.addUser(registorApiParams));
 
 		logger.info("新增用户成功!");
 
@@ -79,7 +84,8 @@ public class UserController {
 		System.out.println(pagerForm.toString());
 		logger.info("用户列表...");
 
-		String result = userApi.list(pagerForm);
+		String result = null ;
+//		String result = userApi.list(pagerForm);
 		return result;
 	}
 

@@ -1,11 +1,8 @@
 package org.global.fairy.cms.admin.service;
 
 import org.global.fairy.cms.admin.service.params.RegistorServiceParams;
-import org.global.fairy.core.PageParams;
-import org.global.fairy.core.Pager;
 
-public interface UserService {
-
+public interface IUserService {
 	/**
 	 * 注册方法
 	 * 
@@ -27,7 +24,8 @@ public interface UserService {
 	 * @param PageParams
 	 * @return
 	 */
-	String list(PageParams pagerForm);
+	String list();
+//	String list(PageParams pagerForm);
 
 	/**
 	 * 添加用戶

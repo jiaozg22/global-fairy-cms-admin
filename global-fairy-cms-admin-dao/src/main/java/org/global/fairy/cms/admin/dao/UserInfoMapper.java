@@ -10,12 +10,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserInfoMapper{
 
-	public UserInfoBean getUserInfo();
+	UserInfoBean getUserInfo();
 
-	public int insertUserInfo(UserInfoBean userInfo);
+	int insertUserInfo(UserInfoBean userInfo);
 
-	public int deleteUserInfo(long id);
+	int deleteUserInfo(long id);
 
-	public List<UserInfoBean> list(@Param(value = "pageParams") PageParams pageParams);
+	List<UserInfoBean> list(@Param(value = "pageParams") PageParams pageParams);
 
 }

@@ -2,7 +2,9 @@ package org.global.fairy.cms.admin.service.impl;
 
 import java.io.IOException;
 
-import org.global.fairy.core.RunWindowsZKService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.global.fairy.core.ZKStartup;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -10,43 +12,51 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 
  */
 public class Assembly {
-	private static boolean startZKService(){
+private static final Logger logger = LogManager.getLogger("Assembly.class");
+	
+	private static boolean startZKService() {
 		boolean result = true;
-		try{
-			RunWindowsZKService.runZKService();
-		}catch(Exception e){
-			System.out.println("自动启动zkservice失败。请手动开启zookeeper的服务！");
+		
+		try {
+			ZKStartup.startup();
+			logger.info("自动启动zkservice成功！");
+		} catch (Exception e) {
+			logger.error("自动启动zkservice失败。请手动开启zookeeper的服务！");
 			result = false;
 		}
 		return result;
 	}
-	
-	private static void startSpringContext(){
+
+	private static void startSpringContext() {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-				new String[] { "global-fairy-dubbo-provider.xml","applicationContext-service-impl.xml","applicationContext-mybatis-cms.xml" });
-		
+				new String[] { "global-fairy-cms-dubbo-provider.xml",
+						"applicationContext-service-impl.xml",
+						"applicationContext-mybatis-cms.xml" });
+
 		context.start();
 
-		System.out.println("Press any key to exit.");
+		logger.info("Press any key to exit.");
 
 		try {
-			System.in.read();
+			int keyStr = System.in.read();
+			logger.info("Press key"+keyStr);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
-	public static void startDubbo(){
+
+	public static void startDubbo() {
 		startZKService();
 		startSpringContext();
 	}
-	
-	public static void stopDubbo(){
-		RunWindowsZKService.stopZKService();
+
+	public static void stopDubbo() {
+		ZKStartup.stopZKService();
+		Thread.currentThread().interrupt();
 	}
-	
+
 	public static void main(String[] args) throws Exception {
 		startDubbo();
-		stopDubbo();
+//		stopDubbo();
 	}
 }

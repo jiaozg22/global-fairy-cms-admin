@@ -10,7 +10,7 @@
 		password
 	</sql>
 	
-	<resultMap id="userInfoResultMap" type="UserInfoBean">
+	<resultMap id="userInfoResultMap" type="org.global.fairy.cms.admin.dao.beans.UserInfoBean">
         <id column="id" property="id" />
         <result column="username" property="username" />
         <result column="password" property="password" />
@@ -18,14 +18,14 @@
 	
 	
 	<!-- 查询语句 -->
-	<select id="getUserInfo" resultType="userInfoBean">
+	<select id="getUserInfo" resultType="org.global.fairy.cms.admin.dao.beans.UserInfoBean">
 		select
 		<include refid="user_info" />
 		from user_info
 	</select>
 
 	<!-- 插入语句 -->
-	<insert id="insertUserInfo" parameterType="userInfoBean" useGeneratedKeys="true"
+	<insert id="insertUserInfo" parameterType="org.global.fairy.cms.admin.dao.beans.UserInfoBean" useGeneratedKeys="true"
 		keyProperty="id">
 		<selectKey keyProperty="id" resultType="int" order="BEFORE">
 			select if(max(id) is null ,1,max(id) + 2) as newId from user_info

@@ -4,11 +4,11 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.global.fairy.cms.admin</groupId>
+		<groupId>org.global.fairy.cms</groupId>
 		<artifactId>global-fairy-cms-admin</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>org.global.fairy.cms.admin.dao</groupId>
+	<groupId>org.global.fairy.cms.admin</groupId>
 	<artifactId>global-fairy-cms-admin-dao</artifactId>
 	<name>global-fairy-cms-admin-dao</name>
 	<url>http://maven.apache.org</url>
@@ -28,13 +28,7 @@
 			<artifactId>mybatis</artifactId>
 			<version>3.2.7</version>
 		</dependency>
-
-		<dependency>
-			<groupId>org.global.fairy</groupId>
-			<artifactId>global-fairy-dao</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
+		
 		<!-- mybatis/spring包 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -55,20 +49,20 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>4.3.8.Final</version>
+			<groupId>org.global.fairy.cms.admin</groupId>
+			<artifactId>global-fairy-cms-admin-modules</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.1-api</artifactId>
-			<version>1.0.0.Final</version>
+			<groupId>org.global.fairy.cms.admin</groupId>
+			<artifactId>global-fairy-cms-admin-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.3.8.Final</version>
+			<groupId>org.global.fairy</groupId>
+			<artifactId>global-fairy-dao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>

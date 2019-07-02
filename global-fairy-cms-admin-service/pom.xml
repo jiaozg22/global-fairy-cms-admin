@@ -4,11 +4,11 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.global.fairy.cms.admin</groupId>
+		<groupId>org.global.fairy.cms</groupId>
 		<artifactId>global-fairy-cms-admin</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>org.global.fairy.cms.admin.service</groupId>
+	<groupId>org.global.fairy.cms.admin</groupId>
 	<artifactId>global-fairy-cms-admin-service</artifactId>
 	<name>global-fairy-cms-admin-service</name>
 	<url>http://maven.apache.org</url>
@@ -45,14 +45,14 @@
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>
 			<artifactId>zookeeper</artifactId>
-			<version>3.4.6</version>
+			<version>3.4.8</version>
 		</dependency>
-
 		
 		<dependency>
 			<groupId>org.global.fairy.cms.admin</groupId>
-			<artifactId>global-fairy-cms-admin-core</artifactId>
+			<artifactId>global-fairy-cms-admin-modules</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
 	</dependencies>
 </project>

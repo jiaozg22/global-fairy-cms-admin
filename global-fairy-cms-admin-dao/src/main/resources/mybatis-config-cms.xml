@@ -10,6 +10,6 @@
 	</typeAliases>
 
 	<plugins>
-		<plugin interceptor="org.global.fairy.cms.admin.dao.interceptor.PagingPlugin" />
+		<plugin interceptor="org.global.fairy.dao.interceptor.PagingPlugin" />
 	</plugins>
 </configuration>

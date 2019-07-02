@@ -7,9 +7,8 @@
 		<artifactId>global-fairy-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>org.global.fairy.cms.admin</groupId>
+	<groupId>org.global.fairy.cms</groupId>
 	<artifactId>global-fairy-cms-admin</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>global-fairy-cms-admin</name>
 	<packaging>pom</packaging>
 	<url>http://maven.apache.org</url>
@@ -25,11 +24,11 @@
 		</dependency>
 	</dependencies>
 	<modules>
+		<module>global-fairy-cms-admin-modules</module>
+		<module>global-fairy-cms-admin-dao</module>
 		<module>global-fairy-cms-admin-web Maven Webapp</module>
 		<module>global-fairy-cms-admin-api</module>
 		<module>global-fairy-cms-admin-service</module>
 		<module>global-fairy-cms-admin-service-impl</module>
-		<module>global-fairy-cms-admin-dao</module>
-		<module>global-fairy-cms-admin-core</module>
 	</modules>
 </project>
