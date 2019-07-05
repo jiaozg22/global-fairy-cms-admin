@@ -25,6 +25,7 @@
 	</dependencies>
 	<modules>
 		<module>global-fairy-cms-admin-modules</module>
+		<module>global-fairy-cms-admin-core</module>
 		<module>global-fairy-cms-admin-dao</module>
 		<module>global-fairy-cms-admin-web Maven Webapp</module>
 		<module>global-fairy-cms-admin-api</module>
