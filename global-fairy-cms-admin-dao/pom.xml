@@ -53,11 +53,7 @@
 			<artifactId>global-fairy-cms-admin-modules</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<dependency>
-			<groupId>org.global.fairy.cms.admin</groupId>
-			<artifactId>global-fairy-cms-admin-core</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		
 
 		<dependency>
 			<groupId>org.global.fairy</groupId>

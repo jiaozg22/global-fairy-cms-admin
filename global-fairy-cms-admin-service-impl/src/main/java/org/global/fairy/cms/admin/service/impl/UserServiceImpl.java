@@ -31,10 +31,10 @@ public class UserServiceImpl implements IUserService{
 		return false;
 	}
 
-//	@Override
-//	public String list(PageParams pagerForm) {
-//		return ResultJsonUtil.toJsonList(userInfoMapper.list(pagerForm));
-//	}
+	@Override
+	public String list(PageParams pagerForm) {
+		return ResultJsonUtil.toJsonList(userInfoMapper.list(pagerForm));
+	}
 
 	@Override
 	public int addUser(RegistorServiceParams registorServiceParams) {
@@ -43,10 +43,5 @@ public class UserServiceImpl implements IUserService{
 		return userInfoMapper.insertUserInfo(userInfoBean);
 	}
 
-	@Override
-	public String list() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 }

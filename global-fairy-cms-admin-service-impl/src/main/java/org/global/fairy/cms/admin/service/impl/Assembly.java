@@ -12,7 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 
  */
 public class Assembly {
-private static final Logger logger = LogManager.getLogger("Assembly.class");
+	private static final Logger logger = LogManager.getLogger("Assembly.class");
 	
 	private static boolean startZKService() {
 		boolean result = true;

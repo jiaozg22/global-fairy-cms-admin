@@ -41,9 +41,9 @@ public class UserController {
 		logger.debug("注册...");
 		RegistorApiParams registorApiParams = RegistorForm2RegistorApiParams
 				.getInstance().convert(registorForm);
-		//userApi.register(registorApiParams);
-		MenuBean menuBean = new MenuBean();
-		userApi.addMenu();
+		userApi.register(registorApiParams);
+//		MenuBean menuBean = new MenuBean();
+//		userApi.addMenu();
 		logger.debug("注册成功!");
 		RegistorApiParams registorApiResult = new RegistorApiParams();
 		registorApiResult.setUsername(registorApiParams.getUsername());
@@ -83,9 +83,7 @@ public class UserController {
 	public String userList(PageParams pagerForm) {
 		System.out.println(pagerForm.toString());
 		logger.info("用户列表...");
-
-		String result = null ;
-//		String result = userApi.list(pagerForm);
+		String result = userApi.list(pagerForm);
 		return result;
 	}
 
